@@ -23,7 +23,6 @@ public class Avion {
     }
 
     public String toString() {
-        boolean sistemaEntretenimiento;
         if(sistemaDeEntretenimiento) {
             return "El avion " + modelo + " de la marca " + marca +" tiene un motor de la marca " +
                     motor.getMarca() + " con " + alas.size() + " alas y " + nroAsientos + " asientos. Cuenta con " + sistemaDeControlDeVuelo.getTipoSistema() + ". Tiene sistema de Entretenimiento";
