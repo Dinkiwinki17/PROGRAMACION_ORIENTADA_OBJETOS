@@ -1,9 +1,12 @@
 package org.example.UVA_II;
 
+import java.util.ArrayList;
+
 public class Pantalla {
     private String tipo;
     private double tamanioPulgadas;
     private String resolucion;
+
 
     public Pantalla(String tipo, double tamanioPulgadas, String resolucion) {
         this.tamanioPulgadas = tamanioPulgadas;
@@ -21,7 +24,10 @@ public class Pantalla {
             default:
                 this.tipo = null;
         }
+    }
 
+    public String toString() {
+        return "Pantalla "+this.tipo+" de "+tamanioPulgadas+ "\" actualmente tiene una resolucion de " +resolucion;
     }
 
     public String getTipo() {
