@@ -6,51 +6,75 @@ import org.example.UVA_I.MotorDeAvion;
 import org.example.UVA_I.SistemaDeControlDeVuelo;
 import org.example.UVA_II.Pantalla;
 import org.example.UVA_II.Televisor;
+import org.example.UVA_III.Bicicleta;
+import org.example.UVA_III.Coche;
+import org.example.UVA_III.Moto;
+import org.example.UVA_III.Vehiculo;
 
 import java.util.ArrayList;
 
 
 public class Main {
     public static void main(String[] args) {
+        Coche coche = new Coche("volkswagen",100, "001", "Jose Rivero", 2000);
+        Bicicleta bicicleta = new Bicicleta("Vairo",60,"Playera","Contrapedal");
+        Moto moto = new Moto("Honda",90,"002","Maria Fantino",2009);
 
-        /**
-         *
-         *
-         * UVA II
-         *
-         */
+        coche.cambiarModoDesplazamiento();
+        System.out.println(coche.desplazar());
+        System.out.println(coche.desplazar(true));
+
         System.out.println();
-        Pantalla pantalla = new Pantalla("L", 55, "1080p");
 
-        Televisor televisor1 = new Televisor("Samsung", "Series 9", 2023, pantalla);
-        televisor1.prenderApagar();
-        System.out.println(televisor1.toString());
-        televisor1.prenderApagar();
-        System.out.println(televisor1.toString());
-        televisor1.prenderApagar();
-        televisor1.cambiarResolucion("4K");
-        televisor1.prenderApagar();
+        System.out.println(bicicleta.desplazar());
+        bicicleta.setTipoDesplazamiento("Cambios");
+        System.out.println(bicicleta.desplazar());
 
+        System.out.println();
 
-        televisor1.prenderApagar();
-        Televisor televisor2 = new Televisor("Samsung", "Series 7", 2018, pantalla, true);
-        televisor2.prenderApagar();
-        System.out.println(televisor2.toString());
-        televisor2.cambiarResolucion("240p");
-        System.out.println(televisor2.toString());
+        System.out.println(moto.desplazar());
 
 
 
-        Pantalla pantalla2 = new Pantalla("O", 35, "4K");
-        Televisor televisor3 = new Televisor("LG", "Series 423", 2024, pantalla2);
-        televisor3.prenderApagar();
-        System.out.println(televisor3.toString());
-
-
-
-
-
-        //
+//
+//        /**
+//         *
+//         *
+//         * UVA II
+//         *
+//         */
+//        System.out.println();
+//        Pantalla pantalla = new Pantalla("L", 55, "1080p");
+//
+//        Televisor televisor1 = new Televisor("Samsung", "Series 9", 2023, pantalla);
+//        televisor1.prenderApagar();
+//        System.out.println(televisor1.toString());
+//        televisor1.prenderApagar();
+//        System.out.println(televisor1.toString());
+//        televisor1.prenderApagar();
+//        televisor1.cambiarResolucion("4K");
+//        televisor1.prenderApagar();
+//
+//
+//        televisor1.prenderApagar();
+//        Televisor televisor2 = new Televisor("Samsung", "Series 7", 2018, pantalla, true);
+//        televisor2.prenderApagar();
+//        System.out.println(televisor2.toString());
+//        televisor2.cambiarResolucion("240p");
+//        System.out.println(televisor2.toString());
+//
+//
+//
+//        Pantalla pantalla2 = new Pantalla("O", 35, "4K");
+//        Televisor televisor3 = new Televisor("LG", "Series 423", 2024, pantalla2);
+//        televisor3.prenderApagar();
+//        System.out.println(televisor3.toString());
+//
+//
+//
+//
+//
+//
 //        /**
 //         *
 //         *
