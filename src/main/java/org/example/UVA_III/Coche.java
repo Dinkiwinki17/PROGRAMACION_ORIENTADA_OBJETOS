@@ -32,10 +32,6 @@ public class Coche extends Vehiculo {
         return anioFabricacion;
     }
 
-    public void setAnioFabricacion(int anioFabricacion) {
-        this.anioFabricacion = anioFabricacion;
-    }
-
     public String getMatricula() {
         return matricula;
     }
