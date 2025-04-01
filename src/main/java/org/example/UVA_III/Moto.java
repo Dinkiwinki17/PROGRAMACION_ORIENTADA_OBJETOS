@@ -7,14 +7,13 @@ public class Moto extends Vehiculo{
 
     public Moto(String marca, double velocidad, String matricula, String nombreTitular, int anioFabricacion) {
         super(marca, velocidad);
+        this.matricula = matricula;
+        this.nombreTitular = nombreTitular;
+        this.anioFabricacion = anioFabricacion;
     }
 
     public int getAnioFabricacion() {
         return anioFabricacion;
-    }
-
-    public void setAnioFabricacion(int anioFabricacion) {
-        this.anioFabricacion = anioFabricacion;
     }
 
     public String getMatricula() {
