@@ -10,6 +10,9 @@ import org.example.UVA_III.Bicicleta;
 import org.example.UVA_III.Coche;
 import org.example.UVA_III.Moto;
 import org.example.UVA_III.Vehiculo;
+import org.example.UVA_IV.Libreria;
+import org.example.UVA_IV.Libro;
+import org.example.UVA_IV.ManejoInterfaz;
 
 import java.util.ArrayList;
 
@@ -18,28 +21,63 @@ public class Main {
         /**
          *
          *
-         * UVA III
+         * UVA IV
+         *
          *
          */
-        Coche coche = new Coche("volkswagen",100, "001", "Jose Rivero", 2000);
-        Bicicleta bicicleta = new Bicicleta("Vairo",60,"Playera","Contrapedal");
-        Moto moto = new Moto("Honda",90,"002","Maria Fantino",2009);
+        Libro libro1 = new Libro("Cien años de soledad", "Gabriel García Márquez", 1967, "978-3-16-148410-0");
+        Libro libro2 = new Libro("Don Quijote de la Mancha", "Miguel de Cervantes", 1605, "978-0-306-40615-2");
+        Libro libro3 = new Libro("1984", "George Orwell", 1949, "978-0-596-52068-7");
+        Libro libro4 = new Libro("El principito", "Antoine de Saint-Exupéry", 1943, "978-2-07-036002-4");
+        Libro libro5 = new Libro("Orgullo y prejuicio", "Jane Austen", 1813, "978-0-7432-7356-5");
 
-        coche.cambiarModoDesplazamiento();
-        System.out.println(coche.desplazar());
-        System.out.println(coche.desplazar(true));
 
-        System.out.println();
+        Libreria libreria = new Libreria();
 
-        System.out.println(bicicleta.desplazar());
-        bicicleta.setTipoDesplazamiento("Cambios");
-        System.out.println(bicicleta.desplazar());
+        libreria.agregarLibro(libro1);
+        libreria.agregarLibro(libro2);
+        libreria.agregarLibro(libro3);
+        libreria.agregarLibro(libro4);
+        libreria.agregarLibro(libro5);
 
-        System.out.println();
+        ManejoInterfaz interfaz = new ManejoInterfaz(libreria);
+        interfaz.iniciar();
 
-        System.out.println(moto.desplazar());
 
-        System.out.println();
+
+
+
+
+
+
+
+
+
+//        /**
+//         *
+//         *
+//         * UVA III
+//         *
+//         */
+//        Coche coche = new Coche("volkswagen",100, "001", "Jose Rivero", 2000);
+//        Bicicleta bicicleta = new Bicicleta("Vairo",60,"Playera","Contrapedal");
+//        Moto moto = new Moto("Honda",90,"002","Maria Fantino",2009);
+//
+//        coche.cambiarModoDesplazamiento();
+//        System.out.println(coche.desplazar());
+//        System.out.println(coche.desplazar(true));
+//
+//        System.out.println();
+//
+//        System.out.println(bicicleta.desplazar());
+//        bicicleta.setTipoDesplazamiento("Cambios");
+//        System.out.println(bicicleta.desplazar());
+//
+//        System.out.println();
+//
+//        System.out.println(moto.desplazar());
+//
+//        System.out.println();
 
 //
 //        /**
