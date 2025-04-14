@@ -1,8 +1,8 @@
 package org.example.UVA_IV;
-
+import java.util.ArrayList;
 import java.util.Comparator;
 
-public class Libro implements Comparator<Libro>, Comparable<Libro> {
+public class Libro implements  Comparable<Libro> {
 
     private String titulo;
     private String autor;
@@ -24,19 +24,6 @@ public class Libro implements Comparator<Libro>, Comparable<Libro> {
     @Override
     public int compareTo(Libro libro) {
         return this.titulo.compareTo(libro.titulo);
-    }
-
-    @Override
-    public int compare(Libro libro1, Libro libro2) {
-        return libro1.autor.compareTo(libro2.autor);
-    }
-
-    public class compararPorAnioPublicacion implements Comparator<Libro> {
-        @Override
-        public int compare(Libro libro1, Libro libro2) {
-            return libro1.anioPublicacion;
-        }
-
     }
 
     // Getters y setters
@@ -71,4 +58,6 @@ public class Libro implements Comparator<Libro>, Comparable<Libro> {
     public void setTitulo(String titulo) {
         this.titulo = titulo;
     }
+
+
 }

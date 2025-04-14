@@ -1,6 +1,7 @@
 package org.example.UVA_IV;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.Scanner;
 
 public class ManejoInterfaz {
@@ -32,6 +33,14 @@ public class ManejoInterfaz {
                     mostrarTodosLosLibros();
                     break;
                 case 5:
+                    libreria.ordenarPorAnio();
+                    libreria.mostrarTodosLosLibros();
+                    break;
+                case 6:
+                    libreria.ordenarPorTitulo();
+                    libreria.mostrarTodosLosLibros();
+                    break;
+                case 7:
                     continuar = false;
                     break;
                 default:
@@ -46,7 +55,9 @@ public class ManejoInterfaz {
         System.out.println("2. Eliminar libro");
         System.out.println("3. Buscar libro");
         System.out.println("4. Mostrar todos los libros");
-        System.out.println("5. Salir");
+        System.out.println("5. Ordenar Libros por anio");
+        System.out.println("6. Ordenar Libros por Titulo");
+        System.out.println("7. Salir");
         System.out.print("Seleccione una opción: ");
     }
 
@@ -135,5 +146,6 @@ public class ManejoInterfaz {
     private void mostrarTodosLosLibros() {
         libreria.mostrarTodosLosLibros();
     }
+
 
 }

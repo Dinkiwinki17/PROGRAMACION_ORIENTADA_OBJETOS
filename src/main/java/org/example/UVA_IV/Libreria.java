@@ -1,10 +1,10 @@
 package org.example.UVA_IV;
-
 import java.sql.Array;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Comparator;
 import java.util.Iterator;
+import java.util.List;
 
 public class Libreria {
     private ArrayList<Libro> libros;
@@ -16,7 +16,7 @@ public class Libreria {
     public void agregarLibro(Libro libro){
         libros.add(libro);
         System.out.println("Libro agregado");
-        Collections.sort(libros);
+        //   Collections.sort(libros);
     }
 
     public void eliminarLibro(Libro libro){
@@ -93,6 +93,14 @@ public class Libreria {
         return librosSeleccionados;
     }
 
+    public void ordenarPorTitulo(){
+        Collections.sort(libros);
+    }
 
+    public void ordenarPorAnio(){
+        Collections.sort(libros, new ComparadorPorAnio());
+    }
 
 }
+
+
