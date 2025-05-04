@@ -13,39 +13,83 @@ import org.example.UVA_III.Vehiculo;
 import org.example.UVA_IV.Libreria;
 import org.example.UVA_IV.Libro;
 import org.example.UVA_IV.ManejoInterfaz;
+import org.example.UVA_V.ManejadorDeArchivos;
+import org.example.UVA_V.ManejardorMenu;
+import org.example.UVA_V.Servidor;
+import org.example.UVA_V.Usuario;
 
 import java.util.ArrayList;
+import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args) {
         /**
          *
          *
-         * UVA IV
+         * UVA V - Inciso 1
          *
          *
          */
-        Libro libro1 = new Libro("Cien años de soledad", "Gabriel García Márquez", 1967, "978-3-16-148410-0");
-        Libro libro2 = new Libro("Don Quijote de la Mancha", "Miguel de Cervantes", 1605, "978-0-306-40615-2");
-        Libro libro3 = new Libro("1984", "George Orwell", 1949, "978-0-596-52068-7");
-        Libro libro4 = new Libro("El principito", "Antoine de Saint-Exupéry", 1943, "978-2-07-036002-4");
-        Libro libro5 = new Libro("Orgullo y prejuicio", "Jane Austen", 1813, "978-0-7432-7356-5");
+        Scanner entradaScanner = new Scanner(System.in);
+
+        Servidor servidor = new Servidor();
+
+        Usuario usuario1 = new Usuario("Jose Gonzales", "joseGonzales@gmail.com");
+        Usuario usuario2 = new Usuario("Martin Echalar", "martinEchalar@gmail.com");
+        Usuario usuario3 = new Usuario("John Smith", "johnSmith@gmail.com");
+
+        servidor.agregarUsuario(usuario1);
+        servidor.agregarUsuario(usuario2);
+        servidor.agregarUsuario(usuario3);
 
 
-        Libreria libreria = new Libreria();
+        ManejardorMenu menu= new ManejardorMenu();
+        int opcion=menu.seleccionarOpcion();
+        if (opcion==1){
+            System.out.println(servidor.buscarUsuario("Jose Gonzales").toString());
+            System.out.println(servidor.buscarUsuario("martinEchalar@gmail.com").toString());
+            System.out.println(servidor.buscarUsuario("John Smith").toString());
 
-        libreria.agregarLibro(libro1);
-        libreria.agregarLibro(libro2);
-        libreria.agregarLibro(libro3);
-        libreria.agregarLibro(libro4);
-        libreria.agregarLibro(libro5);
+            servidor.cambiarEdadUsuario("Jose Gonzales", entradaScanner);
+            servidor.cambiarEdadUsuario(usuario2, entradaScanner);
 
-        ManejoInterfaz interfaz = new ManejoInterfaz(libreria);
-        interfaz.iniciar();
+            System.out.println(servidor.buscarUsuario("Jose Gonzales").toString());
+            System.out.println(servidor.buscarUsuario("martinEchalar@gmail.com").toString());
+            System.out.println(servidor.buscarUsuario("John Smith").toString());
+        }if (opcion==2){
+            System.out.println("En la carpeta del proyecto se ubican los archivos data_UvaV.txt y output_UvaV.txt. " +
+                    "\nTodo lo que haya en el archivo data irá al output\n");
+            ManejadorDeArchivos manejadorDeArchivos = new ManejadorDeArchivos();
+            manejadorDeArchivos.procesarArchivos();
+        }
 
 
 
 
+//         /**
+//         *
+//         *
+//         * UVA IV
+//         *
+//         *
+//         */
+//        Libro libro1 = new Libro("Cien años de soledad", "Gabriel García Márquez", 1967, "978-3-16-148410-0");
+//        Libro libro2 = new Libro("Don Quijote de la Mancha", "Miguel de Cervantes", 1605, "978-0-306-40615-2");
+//        Libro libro3 = new Libro("1984", "George Orwell", 1949, "978-0-596-52068-7");
+//        Libro libro4 = new Libro("El principito", "Antoine de Saint-Exupéry", 1943, "978-2-07-036002-4");
+//        Libro libro5 = new Libro("Orgullo y prejuicio", "Jane Austen", 1813, "978-0-7432-7356-5");
+//
+//
+//        Libreria libreria = new Libreria();
+//
+//        libreria.agregarLibro(libro1);
+//        libreria.agregarLibro(libro2);
+//        libreria.agregarLibro(libro3);
+//        libreria.agregarLibro(libro4);
+//        libreria.agregarLibro(libro5);
+//
+//        ManejoInterfaz interfaz = new ManejoInterfaz(libreria);
+//        interfaz.iniciar();
 
 
 
@@ -78,6 +122,11 @@ public class Main {
 //        System.out.println(moto.desplazar());
 //
 //        System.out.println();
+
+
+
+
+
 
 //
 //        /**
