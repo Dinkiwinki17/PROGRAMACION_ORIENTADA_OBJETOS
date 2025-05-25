@@ -17,7 +17,10 @@ import org.example.UVA_V.ManejadorDeArchivos;
 import org.example.UVA_V.ManejardorMenu;
 import org.example.UVA_V.Servidor;
 import org.example.UVA_V.Usuario;
+import org.example.UVA_VI.Controlador.ControladorLibreria;
+import org.example.UVA_VI.GUI.VentanaPrincipal;
 
+import javax.swing.*;
 import java.util.ArrayList;
 import java.util.Scanner;
 
@@ -26,42 +29,62 @@ public class Main {
         /**
          *
          *
-         * UVA V - Inciso 1
+         * UVA VI
          *
          *
          */
-        Scanner entradaScanner = new Scanner(System.in);
 
-        Servidor servidor = new Servidor();
+        SwingUtilities.invokeLater(() -> {
+            ControladorLibreria controlador = new ControladorLibreria();
+            VentanaPrincipal ventana = new VentanaPrincipal(controlador);
+            ventana.setVisible(true);
 
-        Usuario usuario1 = new Usuario("Jose Gonzales", "joseGonzales@gmail.com");
-        Usuario usuario2 = new Usuario("Martin Echalar", "martinEchalar@gmail.com");
-        Usuario usuario3 = new Usuario("John Smith", "johnSmith@gmail.com");
-
-        servidor.agregarUsuario(usuario1);
-        servidor.agregarUsuario(usuario2);
-        servidor.agregarUsuario(usuario3);
+            Runtime.getRuntime().addShutdownHook(new Thread(controlador::guardarLibrosEnArchivo));
+        });
 
 
-        ManejardorMenu menu= new ManejardorMenu();
-        int opcion=menu.seleccionarOpcion();
-        if (opcion==1){
-            System.out.println(servidor.buscarUsuario("Jose Gonzales").toString());
-            System.out.println(servidor.buscarUsuario("martinEchalar@gmail.com").toString());
-            System.out.println(servidor.buscarUsuario("John Smith").toString());
 
-            servidor.cambiarEdadUsuario("Jose Gonzales", entradaScanner);
-            servidor.cambiarEdadUsuario(usuario2, entradaScanner);
 
-            System.out.println(servidor.buscarUsuario("Jose Gonzales").toString());
-            System.out.println(servidor.buscarUsuario("martinEchalar@gmail.com").toString());
-            System.out.println(servidor.buscarUsuario("John Smith").toString());
-        }if (opcion==2){
-            System.out.println("En la carpeta del proyecto se ubican los archivos data_UvaV.txt y output_UvaV.txt. " +
-                    "\nTodo lo que haya en el archivo data irá al output\n");
-            ManejadorDeArchivos manejadorDeArchivos = new ManejadorDeArchivos();
-            manejadorDeArchivos.procesarArchivos();
-        }
+//        /**
+//         *
+//         *
+//         * UVA V - Inciso 1
+//         *
+//         *
+//         */
+//
+//        Scanner entradaScanner = new Scanner(System.in);
+//
+//        Servidor servidor = new Servidor();
+//
+//        Usuario usuario1 = new Usuario("Jose Gonzales", "joseGonzales@gmail.com");
+//        Usuario usuario2 = new Usuario("Martin Echalar", "martinEchalar@gmail.com");
+//        Usuario usuario3 = new Usuario("John Smith", "johnSmith@gmail.com");
+//
+//        servidor.agregarUsuario(usuario1);
+//        servidor.agregarUsuario(usuario2);
+//        servidor.agregarUsuario(usuario3);
+//
+//
+//        ManejardorMenu menu= new ManejardorMenu();
+//        int opcion=menu.seleccionarOpcion();
+//        if (opcion==1){
+//            System.out.println(servidor.buscarUsuario("Jose Gonzales").toString());
+//            System.out.println(servidor.buscarUsuario("martinEchalar@gmail.com").toString());
+//            System.out.println(servidor.buscarUsuario("John Smith").toString());
+//
+//            servidor.cambiarEdadUsuario("Jose Gonzales", entradaScanner);
+//            servidor.cambiarEdadUsuario(usuario2, entradaScanner);
+//
+//            System.out.println(servidor.buscarUsuario("Jose Gonzales").toString());
+//            System.out.println(servidor.buscarUsuario("martinEchalar@gmail.com").toString());
+//            System.out.println(servidor.buscarUsuario("John Smith").toString());
+//        }if (opcion==2){
+//            System.out.println("En la carpeta del proyecto se ubican los archivos data_UvaV.txt y output_UvaV.txt. " +
+//                    "\nTodo lo que haya en el archivo data irá al output\n");
+//            ManejadorDeArchivos manejadorDeArchivos = new ManejadorDeArchivos();
+//            manejadorDeArchivos.procesarArchivos();
+//        }
 
 
 
